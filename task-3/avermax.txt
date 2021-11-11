@@ -1,0 +1,47 @@
+import java.util.*;
+class Solution
+{
+public static void main(String arg[])
+{
+Scanner sc=new Scanner(System.in);
+int n,k;
+int t=sc.nextInt();
+    if(1<=t && t<=10)
+    {
+for(int i=0;i<t;i++)
+{
+ n=sc.nextInt();
+ k=sc.nextInt();
+double a[]=new double[n];
+ for(int j=0;j<n;j++)
+ {
+  a[j]=sc.nextDouble();
+ }
+if(k>0)
+{
+    double l=Math.abs(a[0]);
+    for(int j=1;j<n;j++)
+    {
+    if(l<Math.abs(a[j]))
+    {
+    l=Math.abs(a[j]);
+    }
+    }
+    System.out.println(l);
+}
+else
+{
+    double lar=a[0];
+    for(int j=1;j<n;j++)
+    {
+    if(lar<a[j])
+    {
+    lar=a[j];
+    }
+    }
+    System.out.println(lar);    
+}
+}
+}
+}
+}

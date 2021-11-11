@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int N=sc.nextInt();
+        int M=sc.nextInt();
+        if(1<=N && N<=1000000 && 1<=M && M<=1000000)
+        {
+        int c=0;
+        while(N>=1)
+        {
+            if(N%2==0)
+            {
+            c++;
+            N=N/2;
+            }
+            else
+                break;
+        }
+            int a[]=new int[M];
+        int f=0;int p=0;
+            int k=0;
+            for(int i=1;i<=M;i++)
+            {
+                int j=i;
+                while(j%2==0)
+                {
+                    f++;
+                    j=j/2;
+                }
+                if(i%2!=0)
+                {
+                    f=0;
+                    
+                }
+                if(f<c)
+                {
+                    k++;
+                    a[p]=i;
+                    p++;
+                }
+            }
+        System.out.println(k);
+            for(int i=0;i<k;i++)
+            {
+                if(a[i]!=0)
+                    System.out.print(a[i]+" ");
+            }
+              
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}

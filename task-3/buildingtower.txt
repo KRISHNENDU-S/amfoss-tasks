@@ -1,0 +1,76 @@
+
+import java.util.*;
+
+public class Solution 
+ {
+    
+    
+
+    public static void main(String[] args)
+     {
+        Scanner sc =new Scanner(System.in);
+        int N=sc.nextInt();
+        int t;
+        int w[]=new int[N];
+        for(int i=0;i<N;i++)
+        {
+            w[i]=sc.nextInt();
+        }
+        for(int i=0;i<N;i++)
+        {
+            for(int j=0;j<=N-2-i;j++)
+            {
+                if(w[j]>w[j+1])
+                {
+                t=w[j];
+                w[j]=w[j+1];
+                w[j+1]=t;
+                }
+            }
+        }
+        int q=1;
+        for(int i=0;i<N-1;i++)
+        {
+            if(w[i]!=w[i+1])
+                q++;
+        }
+        
+        int f[]=new int[q];
+        int s=0;
+        for(int i=0;i<q;i++)
+        {
+                        s=1;
+
+                 for(int j=i;j<N-1;j++)
+                     {
+                      if(w[j]==w[j+1])
+                        s++;
+                     else
+                         break;
+                       }
+              f[i]=s;
+                
+            }
+                
+            
+          
+    
+        for(int i=0;i<q;i++)
+        {
+            for(int j=0;j<=q-2-i;j++)
+            {
+                if(f[j]>f[j+1])
+                {
+                t=f[j];
+                f[j]=f[j+1];
+                f[j+1]=t;
+                }
+            }
+        }
+        System.out.print(f[q-1]+" "+q);
+      
+    
+        
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
